@@ -35,18 +35,21 @@ public class tree_directory
 
     public node search (node start, String fname)
     {
-        if(start.name.equals(fname))
+        if(start.fname.equals(fname))
         {
             return start;
         }
 
-        for (node child : start.children)
+        for (node child: start.childrens)
         {
-                node result = search(child, fname);
-                if(return !=null)
-                    return result;
+            node result = search(child, fname);
+            if(result !=null)
+            {
+            return result;
+            }
         }
         return null;
+    }
 }
 
 
