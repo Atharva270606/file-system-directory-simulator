@@ -33,16 +33,16 @@ public class tree_directory
 
     //Search Directory
 
-    public Node search (Node start, String name)
+    public node search (node start, String fname)
     {
-        if(start.name.equals(name))
+        if(start.name.equals(fname))
         {
             return start;
         }
 
-        for (Node child : start.children)
+        for (node child : start.children)
         {
-                Node result = search(child, name);
+                node result = search(child, fname);
                 if(return !=null)
                     return result;
         }
