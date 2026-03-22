@@ -30,6 +30,23 @@ public class tree_directory
         current_pos.childrens.add(newdir);
         System.out.println("Directory " + dirname + " has sucessfully been created...");
     }
+
+    //Search Directory
+
+    public Node search (Node start, String name)
+    {
+        if(start.name.equals(name))
+        {
+            return start;
+        }
+
+        for (Node child : start.children)
+        {
+                Node result = search(child, name);
+                if(return !=null)
+                    return result;
+        }
+        return null;
 }
 
 
