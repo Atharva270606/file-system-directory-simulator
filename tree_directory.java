@@ -31,7 +31,7 @@ public class tree_directory
         System.out.println("Directory " + dirname + " has sucessfully been created...");
     }
 
-    //Search Directory
+    //Function for Searching a Directory
 
     public node search (node start, String fname)
     {
@@ -50,6 +50,33 @@ public class tree_directory
         }
         return null;
     }
+
+    
+    //Function for Deleting a Directory
+    public void delete(String fname)
+    {
+        node target = null;
+
+        for(node child : current_pos.childrens)
+            {
+                if(child.fname.equals(fname))
+                {
+                    target = child;
+                    break;
+                }
+            }
+
+        if (target ==null)
+        {
+            System.out.println("The Directory is not found!");
+            return;
+        }
+
+        current_pos.childrens.remove(target);
+
+        System.out.println("Directory was Deleted: " +fname);
+    }
+    
 }
 
 
