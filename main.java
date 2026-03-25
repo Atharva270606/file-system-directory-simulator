@@ -4,7 +4,7 @@ import java.util.Scanner;
     public static void main(String[] args) 
    {
 
-      Scanner sc = new Scanner(system.in);
+      Scanner sc = new Scanner(System.in);
       tree_directory tree = new tree_directory();
 
       int choice;
@@ -16,13 +16,14 @@ import java.util.Scanner;
         System.out.println("2. Deleting a Directory");
         System.out.println("3. Searching a Directory ");
         System.out.println("4. Displaying a Tree ");
-        System.out.println("5. Exit ");\
+        System.out.println("5. Exit ");
 
         System.out.println("Enter Your Choice: ");
         choice = sc.nextInt();
         sc.nextLine();
 
-        switch (choice) {
+        switch(choice) 
+        {
 
           case 1: 
             System.out.print("Enter your directory name:");
@@ -38,7 +39,7 @@ import java.util.Scanner;
 
           case 3:
             System.out.println("Enter directory name to search : ");
-            string search = sc.nextLine();
+            String search = sc.nextLine();
 
             node result =  tree.search(tree.root, search);
 
@@ -51,11 +52,10 @@ import java.util.Scanner;
               System.out.println("The Directory is not found ");
             }
               break;
-
-        }while(choice != 5)
+          }  
+        }while(choice != 4);
 
           sc.close();
-      }
-   }
-            
+    }
+  }          
             
