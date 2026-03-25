@@ -33,21 +33,22 @@ public class tree_directory
 
     //Function for Searching a Directory
 
-    public node search (node start, String fname)
+  Node search(Node node, String fname)
     {
-        if(start.fname.equals(fname))
+        if (node.fname.equals(fname))
         {
-            return start;
+            return node;
         }
 
-        for (node child: start.childrens)
-        {
-            node result = search(child, fname);
-            if(result !=null)
+        for (int i = 0; i< node.dircount; i++)
             {
-            return result;
+                Node result = search(node.childrens[i], fname);
+                if (result !=null)
+                {
+                    return result;
+                }
             }
-        }
+
         return null;
     }
 
