@@ -54,28 +54,35 @@ public class tree_directory
 
     
     //Function for Deleting a Directory
-    public void delete(String fname)
+   public void delete(String fname)
     {
-        node target = null;
-
-        for(node child : current_pos.childrens)
+        for (int i = 0; i<current_pos.dircount; i++)
             {
-                if(child.fname.equals(fname))
+                if(current_pos.childrens[i].fname.equals(fname))
                 {
-                    target = child;
-                    break;
+                    for(int j=i; j<current_pos.dircount -1; j++)
+                        {
+                            current_pos.childrens[j]=current_pos.childrens[j+1];
+                        }
+                    current_pos.childrens[current_-pos.dircount -1] =null;
+                    current_pos.dircount--;
+
+                    System.out.println("The Directory is deleted: "+fname);
+                    return;
                 }
             }
+        System.out.println("The Directory was not found!");
+    }
 
-        if (target ==null)
-        {
-            System.out.println("The Directory is not found!");
-            return;
-        }
+    //Display the Tree
+    public void display(node start, String indent)
+    {
+        System.out.println(indent + "|-- " +start.fname);
 
-        current_pos.childrens.remove(target);
-
-        System.out.println("Directory was Deleted: " +fname);
+        for (int i = 0; i<start.dircount; i++)
+            {
+                display(start.childrens[i], indent +" ");
+            }
     }
     
 }
