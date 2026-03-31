@@ -8,6 +8,7 @@ public class tree_directory
     
     public tree_directory(int size)
     {
+        maxsize = size; 
         root = new node("root", maxsize);
         current_pos = root;
     }
@@ -17,9 +18,15 @@ public class tree_directory
 
     public void mkdir(String dirname)
     {
+        if(current_pos.dircount >= maxsize)
+        {
+            System.out.println("Directory limit reached!");
+            return;
+        }
+
         for(node child : current_pos.childrens)
         {
-            if(child.fname.equals(dirname))
+            if(child != null && child.fname.equals(dirname))
             {
                 System.out.println("The Directory already exists....!!");
                 return;
@@ -30,6 +37,8 @@ public class tree_directory
 
        current_pos.childrens[current_pos.dircount] = newdir;
        current_pos.dircount++;
+
+       
     }
 
     //Function for Searching a Directory
