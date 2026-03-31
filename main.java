@@ -6,7 +6,7 @@ import java.util.Scanner;
 
       Scanner sc = new Scanner(System.in);
 
-      System.out.print("Enter maximum number of directories");
+      System.out.print("Enter maximum number of directories:");
       int size = sc.nextInt();
       sc.nextLine();
 
