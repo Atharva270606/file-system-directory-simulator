@@ -4,10 +4,11 @@ public class tree_directory
 {
     node root;
     node current_pos; 
+    int maxsize;
     
-    public tree_directory()
+    public tree_directory(int size)
     {
-        root = new node("root");
+        root = new node("root", maxsize);
         current_pos = root;
     }
 
@@ -24,16 +25,16 @@ public class tree_directory
                 return;
             }
         }
-        node newdir = new node(dirname);
+        node newdir = new node(dirname,maxsize);
         newdir.parent = current_pos;
 
-        current_pos.childrens.add(newdir);
-        System.out.println("Directory " + dirname + " has sucessfully been created...");
+       current_pos.childrens[current_pos.dircount] = newdir;
+       current_pos.dircount++;
     }
 
     //Function for Searching a Directory
 
-  Node search(Node node, String fname)
+  node search(node node, String fname)
     {
         if (node.fname.equals(fname))
         {
@@ -42,7 +43,7 @@ public class tree_directory
 
         for (int i = 0; i< node.dircount; i++)
             {
-                Node result = search(node.childrens[i], fname);
+                node result = search(node.childrens[i], fname);
                 if (result !=null)
                 {
                     return result;
@@ -64,7 +65,7 @@ public class tree_directory
                         {
                             current_pos.childrens[j]=current_pos.childrens[j+1];
                         }
-                    current_pos.childrens[current_-pos.dircount -1] =null;
+                    current_pos.childrens[current_pos.dircount -1] =null;
                     current_pos.dircount--;
 
                     System.out.println("The Directory is deleted: "+fname);

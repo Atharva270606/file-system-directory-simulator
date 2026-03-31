@@ -14,7 +14,7 @@ import java.util.Scanner;
 
       int choice;
 
-      do(
+      do{
 
            System.out.println("\n***** File System directory simulator*****");
            System.out.println("1. Creating a Directory");
@@ -29,19 +29,18 @@ import java.util.Scanner;
            sc.nextLine();
 
            switch (choice)
-            
            {
 
 
             case 1: 
                 System.out.print("1. Enter your directory name: ");
-                string name = sc.nextLine();
+                String name = sc.nextLine();
                 tree.mkdir(name);
                 break;
 
             case 2: 
                 System.out.print("1. Creating the  directory name you want to delete ");
-                string dele = sc.nextLine();
+                String dele = sc.nextLine();
                 tree.delete(dele);
                 break;
 
