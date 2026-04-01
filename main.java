@@ -57,8 +57,15 @@ import java.util.Scanner;
                 }
                 break;
 
+             case 4 : 
+                 System.out.println("Displaying directory Tree:");
+                 tree.display(tree.root,"");
+                 break;
+      
+             case 5:
+                 Syystem.out.println("Exiting program....");
            }
-     
+break;
    } while (choice !=5);
 
     sc.close();
@@ -66,16 +73,6 @@ import java.util.Scanner;
 
 }
 
-              case 4 : 
-                 System.out.println("Displaying directory Tree:");
-                 tree.display(tree.root,"");
-                 break;
-      
-    
-              case 5:
-                 Syystem.out.println("Exiting program....");
-
-break;
                
 
 
