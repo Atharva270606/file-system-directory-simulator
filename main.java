@@ -33,13 +33,13 @@ import java.util.Scanner;
 
 
             case 1: 
-                System.out.print("1. Enter your directory name: ");
+                System.out.print("Enter your directory name: ");
                 String name = sc.nextLine();
                 tree.mkdir(name);
                 break;
 
             case 2: 
-                System.out.print("1. Creating the  directory name you want to delete ");
+                System.out.print("Creating the  directory name you want to delete ");
                 String dele = sc.nextLine();
                 tree.delete(dele);
                 break;
@@ -50,9 +50,12 @@ import java.util.Scanner;
 
                 node result = tree.search(tree.root, search );
 
-                if (result != null) {
+                if (result != null) 
+                {
                     System.out.println("The directory is Found!  ");
-                } else {
+                } 
+                else 
+                {
                     System.out.println("1. The directory is not found");
                 }
                 break;
@@ -63,9 +66,13 @@ import java.util.Scanner;
                  break;
       
              case 5:
-                 Syystem.out.println("Exiting program....");
+                 System.out.println("Exiting program....");
+                 break;
+
+            default:
+                System.out.println("Sorry didn't find such option......");
            }
-break;
+
    } while (choice !=5);
 
     sc.close();
