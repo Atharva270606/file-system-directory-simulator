@@ -37,7 +37,7 @@ Atharva Bedre
 Design and implementation of the N-ary tree structure and folder creation logic (mkdir operation).
 
 Sujal Mahindrakar
-Implementation of folder deletion and search operations and handling of possible edge cases.
+Implementation of folder deletion and search operations and handling of possible edge cases.(display function)
 
 Mrinank Phutane
-Development of the menu-driven interface, handling user input, and displaying the directory structure in tree format.
+Development of the menu-driven interface, handling user input, and displaying the directory structure in tree format.(cd,showpath funtion)
