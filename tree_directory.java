@@ -94,25 +94,27 @@ public class tree_directory
                 display(start.childrens[i], indent +" ");
             }
     }
+    
     public void cd(String dirname)
     {
-        if(dirname.equals(*..*))
+        if(dirname.equals(".."))
         {
             if(current_pos.parent !=null)
             {
-                current_pos = current_por.parent;
+                current_pos = current_pos.parent;
             }
             return;
         }
 
-        for(int i = 0;i<current_pos.dircount; i++)
-        {
-            if(current_pos.childrens[i].fname.eqauls(dirname))
-            {
-                current_pos = current_pos.children[i];
-                return;
-            }
-        }
+        for(int i = 0; i < current_pos.dircount; i++)
+{
+    if(current_pos.childrens[i] != null && 
+       current_pos.childrens[i].fname.equals(dirname))
+    {
+        current_pos = current_pos.childrens[i];
+        return;
+    }
+}
 
         System.out.println("Directory not found! Try Again");
     }

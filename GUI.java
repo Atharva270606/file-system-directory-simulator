@@ -1,5 +1,5 @@
-import javax.swing.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class GUI extends JFrame implements ActionListener
 {
@@ -17,6 +17,10 @@ public class GUI extends JFrame implements ActionListener
       setLayout(null);
       setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+      JLabel sizeLabel = new JLabel("Max Directories:");
+      sizeLabel.setBounds(100,20,120,30);
+      add(sizeLabel);
+
       fieldsize = new JTextField();
       fieldsize.setBounds(230,20,120,30);
       add(fieldsize);
@@ -25,14 +29,17 @@ public class GUI extends JFrame implements ActionListener
       startButton.setBounds(370,20,100,30);
       startButton.addActionListener(this);
       add(startButton);
-    
+
       JLabel inputL = new JLabel("Directory Name-->");
       inputL.setBounds(30,70,150,30);
       add(inputL);
 
+      inputField = new JTextField();        // FIX: inputField initialized
+      inputField.setBounds(180,70,200,30);
+      add(inputField);
+
       createButton = new JButton("Create Directory");
       createButton.setBounds(30,120,120,35);
-      add(createButton);createButton.setBounds(30,120,120,35);
       add(createButton);
 
       deleteButton = new JButton("Delete");
@@ -60,7 +67,6 @@ public class GUI extends JFrame implements ActionListener
       add(exitButton);
 
       output = new JTextArea();
-      output.setBounds(30,240,570,200);
       output.setEditable(false);
 
       JScrollPane scroll = new JScrollPane(output);
@@ -127,7 +133,7 @@ public class GUI extends JFrame implements ActionListener
 
         else if(e.getSource()==pathButton)
         {
-            tree.showpath();
+            tree.showPath();
         }
 
         else if(e.getSource()==exitButton)
@@ -141,5 +147,3 @@ public class GUI extends JFrame implements ActionListener
         new GUI();
     }
 }
-      
-
